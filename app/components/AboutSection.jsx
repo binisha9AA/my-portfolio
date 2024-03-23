@@ -101,6 +101,3 @@ export const AboutSection = () => {
     </section>
   );
 };
-
-// color for tabs
-// #4281f1
