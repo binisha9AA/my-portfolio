@@ -3,64 +3,7 @@ import React, { useState, useRef } from 'react';
 import ProjectCard from './ProjectCard';
 import ProjectTag from './ProjectTag';
 import { motion, useInView } from 'framer-motion';
-const projectsData = [
-  {
-    id: 1,
-    title: 'React Portfolio Website',
-    image: '/images/combiner.png',
-    tag: ['All', 'Personal'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 2,
-    title: 'Crowd Funding landing page',
-    image: '/images/combiner.png',
-    tag: ['All', 'Challenges'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 3,
-    title: 'Landing Page',
-    image: '/images/new.png',
-    tag: ['All', 'Personal'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 4,
-    title: 'Meme Generator',
-    image: '/images/meme.png',
-    tag: ['All', 'Challenges'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 5,
-    title: 'JR Safety',
-    image: '/images/combiner.png',
-    tag: ['All', 'Projects'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 6,
-    title: 'SWI Fencing',
-    image: '/images/combiner.png',
-    tag: ['All', 'Projects'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-  {
-    id: 7,
-    title: 'Cigweld',
-    image: '/project-images/combiner.png',
-    tag: ['All', 'Projects'],
-    gitUrl: '/',
-    previewUrl: '/',
-  },
-];
+import ProjectsData from './ProjectData';
 
 const ProjectSection = () => {
   const [tag, setTag] = useState('All');
@@ -69,7 +12,7 @@ const ProjectSection = () => {
   };
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const filteredProjects = projectsData.filter((project) =>
+  const filteredProjects = ProjectsData.filter((project) =>
     project.tag.includes(tag)
   );
   const cardVariants = {
